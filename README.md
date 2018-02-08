@@ -1,2 +1,1 @@
-# js-memorygame
-Memory game
+# [Memory game](https://nguyenkhois.github.io/js-memorygame/)
