@@ -1,0 +1,32 @@
+table{border: 1px solid #CCCCCC;}
+
+td{
+    width: 100px;
+    height: 100px;
+    border: 1px solid #CCCCCC;
+    cursor: pointer;
+}
+
+.cardMouseOver {}
+.cardMouseOverForbidden{cursor: not-allowed;}
+
+/*Definitions styles for cards*/
+.cardRow1Col1{background: #00bfff;}
+.cardRow1Col2{background: #a82be2;}
+.cardRow1Col3{background: #DC143C;}
+.cardRow1Col4{background: #00bfff;}
+
+.cardRow2Col1{background: #a82be2;}
+.cardRow2Col2{background: #ff8c00;}
+.cardRow2Col3{background: #20b2aa;}
+.cardRow2Col4{background: #DC143C;}
+
+.cardRow3Col1{background: #708090;}
+.cardRow3Col2{background: #ffd700;}
+.cardRow3Col3{background: #708090;}
+.cardRow3Col4{background: #7fff00;}
+
+.cardRow4Col1{background: #7fff00;}
+.cardRow4Col2{background: #ffd700;}
+.cardRow4Col3{background: #ff8c00;}
+.cardRow4Col4{background: #20b2aa;}
