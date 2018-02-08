@@ -15,6 +15,8 @@ function checkStatusAndLockCouple(flagCardOneStatus,flagCardTwoStatus,flagCouple
     let cardOneStatus = parseInt(flagCardOneStatus);
     let cardTwoStatus = parseInt(flagCardTwoStatus);
 
+    /*alert(coupleStatus + "-" + countClick + "-" + flagCardOneStatus+"-"+flagCardTwoStatus);*/
+
     if (checkCoupleFound(cardOneStatus,cardTwoStatus) && countClick === 2){
         coupleStatus = 1;
         lockCouple(cardOneObj,cardTwoObj);
@@ -31,27 +33,24 @@ function checkStatusAndLockCouple(flagCardOneStatus,flagCardTwoStatus,flagCouple
 }
 function cardActiveInactive(cardObj, flagStatusOfCard){
     let statusOfCard = parseInt(flagStatusOfCard);
+    let cardCssClassName = cardObj.getAttribute("id");
 
-    if (countClick < 2){
-        let cardCssClassName = cardObj.getAttribute("id");
-        if (hasCssClass(cardObj,cardCssClassName) && statusOfCard === 1){
-            deleteCardInStore(cardObj);
-            removeCssClass(cardObj,cardCssClassName);
-            countClick--;
-            statusOfCard = 0;
-        }else if(statusOfCard === 0){
-            addNewCardToStore(cardObj);
-            addCssClass(cardObj,cardCssClassName);
-            countClick++;
-            statusOfCard = 1;
-        }
+    if (hasCssClass(cardObj,cardCssClassName) && statusOfCard === 1){
+        removeCssClass(cardObj,cardCssClassName);
+        countClick--;
+        statusOfCard = 0;
+        deleteCardInStore(cardObj);
+    }else if(statusOfCard === 0){
+        //Check if countClick = 2 now and player will click one more time
+        //It's mean countClick will be 3 after this click
+        //We must close 2 cards which opened before
+        //Allow only 2 cards opened in the same time
 
-        if (countClick === 2){
-            setTimeout(function () {
-                deleteTwoCardsBefore();
-                countClick = 0;//reset countClick
-            },500);
-        }
+        if (countClick === 2){deleteTwoCardsBefore();}
+        addNewCardToStore(cardObj);
+        addCssClass(cardObj,cardCssClassName);
+        countClick++;
+        statusOfCard = 1;
     }
     return statusOfCard;
 
@@ -70,6 +69,7 @@ function cardActiveInactive(cardObj, flagStatusOfCard){
             document.getElementById(cardClickedStoreArray[i]).removeAttribute("class");//reset to default style
         }
         cardClickedStoreArray = [];//reset store array
+        countClick = 0;//reset countClick
         resetAllFlagCards();//reset all flagCards
     }
 }
@@ -93,28 +93,4 @@ function resetAllFlagCards() {
     flagRow4Col2 = 0;
     flagRow4Col3 = 0;
     flagRow4Col4 = 0;
-}
-function checkCountTriesLeft(flagCouple) {
-    let coupleStatus = parseInt(flagCouple);
-
-    if (coupleStatus === 0 && countClick === 2){
-        if (countTriesLeft > 0){
-            countTriesLeft--;
-            document.getElementById("displayUserTriesLeft").innerHTML = countTriesLeft;
-        }else{
-            turnOnLockState();
-            document.getElementById("displayLoseMessage").innerHTML = "You loose! Try again!"
-        }
-    }
-}
-function turnOnLockState(){
-    flagCouple1 = 1;
-    flagCouple2 = 1;
-    flagCouple3 = 1;
-    flagCouple4 = 1;
-    flagCouple5 = 1;
-    flagCouple6 = 1;
-    flagCouple7 = 1;
-    flagCouple8 = 1;
-
 }

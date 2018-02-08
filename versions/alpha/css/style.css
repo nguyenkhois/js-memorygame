@@ -6,8 +6,8 @@ td{
     border: 1px solid #CCCCCC;
     cursor: pointer;
 }
-.messageError{color: #ff0000;}
-.cardMemory {}
+
+.cardMouseOver {}
 .cardMouseOverForbidden{cursor: not-allowed;}
 
 /*Definitions styles for cards*/

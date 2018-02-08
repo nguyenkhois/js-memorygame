@@ -1,6 +1,7 @@
 //DECLARE GLOBAL VARIABLES
 let cardClickedStoreArray = [];
 let countClick = 0;//Total of click (allow only from 0 to 2)
+let countTriesLeft = 15;
 
 //For card's status
 let flagRow1Col1 = 0;
