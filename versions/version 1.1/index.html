@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Memory game</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Memory game</h1>
+
+    <table id="tbMemoryGame">
+        <tr>
+            <td id="cardRow1Col1" class="cardMemory"></td>
+            <td id="cardRow1Col2" class="cardMemory"></td>
+            <td id="cardRow1Col3" class="cardMemory"></td>
+            <td id="cardRow1Col4" class="cardMemory"></td>
+        </tr>
+        <tr>
+            <td id="cardRow2Col1" class="cardMemory"></td>
+            <td id="cardRow2Col2" class="cardMemory"></td>
+            <td id="cardRow2Col3" class="cardMemory"></td>
+            <td id="cardRow2Col4" class="cardMemory"></td>
+        </tr>
+        <tr>
+            <td id="cardRow3Col1" class="cardMemory"></td>
+            <td id="cardRow3Col2" class="cardMemory"></td>
+            <td id="cardRow3Col3" class="cardMemory"></td>
+            <td id="cardRow3Col4" class="cardMemory"></td>
+        </tr>
+        <tr>
+            <td id="cardRow4Col1" class="cardMemory"></td>
+            <td id="cardRow4Col2" class="cardMemory"></td>
+            <td id="cardRow4Col3" class="cardMemory"></td>
+            <td id="cardRow4Col4" class="cardMemory"></td>
+        </tr>
+    </table>
+
+    <h2>You have <span id="displayUserTriesLeft">15</span> tries left</h2>
+    <p id="displayLoseMessage" class="messageError"></p>
+    <button id="btnPlayAgain">Play again!</button>
+
+    <script src="scripts/global.js"></script>
+    <script src="scripts/functions.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
