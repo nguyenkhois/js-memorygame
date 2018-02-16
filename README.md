@@ -1,4 +1,6 @@
 # [Memory game](https://nguyenkhois.github.io/js-memorygame/)
+* [Online demo](https://nguyenkhois.github.io/js-memorygame/)
+
 ## Changelogs
 
 ### Version 1.1 (2018-02-10)
